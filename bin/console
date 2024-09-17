@@ -1,0 +1,17 @@
+#!/usr/bin/env php
+<?php
+
+use Play\Hard\Frame\Cli\ConsoleManagerPoolInterface;
+use Play\Hard\Frame\ObjectManagerInvoker;
+
+require dirname(__DIR__) . '/vendor/autoload.php';
+
+try {
+    $consoleManager = ObjectManagerInvoker::getInstance()->get(ConsoleManagerPoolInterface::class);
+
+    $consoleManager->doRun();
+} catch (\Exception $e) {
+    echo sprintf('Can not run the CLI command. Reason: [%s]', $e->getMessage());
+
+    exit(1);
+}

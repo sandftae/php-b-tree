@@ -1,0 +1,138 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../config/xsd/schema.xsd">
+
+    <implementation implementer="Play\Hard\Frame\Cli\ConsoleManagerPool"
+                    interface="Play\Hard\Frame\Cli\ConsoleManagerPoolInterface"/>
+
+    <implementation implementer="Play\Hard\Code\Btree\Cli\BtreeProcessor"
+                    interface="Play\Hard\Code\Btree\Cli\BtreeProcessorInterface"/>
+
+    <implementation implementer="Play\Hard\Code\Btree\Model\TreeElement\BTreeStructure"
+                    interface="Play\Hard\Code\Btree\Api\BTreeStructureInterface"/>
+
+    <implementation implementer="Play\Hard\Code\Btree\Model\TreeElement\BTreeNode"
+                    interface="Play\Hard\Code\Btree\Api\BtreeNodeInterface"/>
+
+    <implementation implementer="Play\Hard\Code\Btree\Model\TreeElement\BTreeNodeKey"
+                    interface="Play\Hard\Code\Btree\Api\BtreeNodeKeyInterface"/>
+
+    <implementation implementer="Play\Hard\Code\Btree\Model\Balance\KeyManagerComposite"
+                    interface="Play\Hard\Code\Btree\Model\Balance\KeyManagerCompositeInterface"/>
+
+    <implementation implementer="Play\Hard\Code\Btree\Model\NodeCrawler"
+                    interface="Play\Hard\Code\Btree\Model\NodeCrawlerInterface"/>
+
+    <implementation implementer="Play\Hard\Code\Btree\Model\KeyNodeLinker"
+                    interface="Play\Hard\Code\Btree\Model\KeyNodeLinkerInterface"/>
+
+    <implementation implementer="Play\Hard\Frame\Cli\Argument\ArgumentProvider"
+                    interface="Play\Hard\Frame\Cli\Spi\ArgumentProviderInterface"/>
+
+    <implementation implementer="Play\Hard\Code\Dump\DataDumper"
+                    interface="Play\Hard\Code\Dump\DataDumperInterface"/>
+
+    <implementation implementer="Play\Hard\Code\GraphicConsole\GraphicConsole"
+                    interface="Play\Hard\Code\GraphicConsole\Api\GraphicConsoleManagerInterface"/>
+
+    <implementation implementer="Play\Hard\Code\Btree\Model\SiblingPoint\SiblingPointerComposite"
+                    interface="Play\Hard\Code\Btree\Model\SiblingPoint\SiblingPointerInterface"/>
+
+    <implementation implementer="Play\Hard\Code\Btree\Model\Pointer"
+                    interface="Play\Hard\Code\Btree\Api\PointerInterface"/>
+
+    <implementation implementer="Play\Hard\Code\GraphicConsole\Digraph\LabelAssemblerComposite"
+                    interface="Play\Hard\Code\GraphicConsole\Api\LabelAssemblerProcessorInterface"/>
+
+    <implementation implementer="Play\Hard\Code\GraphicConsole\LabelHolder"
+                    interface="Play\Hard\Code\GraphicConsole\Api\LabelHolderInterface"/>
+
+    <implementation implementer="Play\Hard\Code\GraphicConsole\ImageExporter"
+                    interface="Play\Hard\Code\GraphicConsole\Api\ImageExporterInterface"/>
+
+    <argumentList for="Play\Hard\Code\Btree\Model\SiblingPoint\SiblingPointerComposite">
+        <arguments>
+            <argument name="pointers" xsi:type="array">
+                <item name="left_hand_pointer" xsi:type="object">Play\Hard\Code\Btree\Model\SiblingPoint\LeftEdgePointer</item>
+                <item name="right_hand_pointer" xsi:type="object">Play\Hard\Code\Btree\Model\SiblingPoint\RightEdgePointer</item>
+                <item name="in_between_pointer" xsi:type="object">Play\Hard\Code\Btree\Model\SiblingPoint\InBetweenPointer</item>
+            </argument>
+        </arguments>
+    </argumentList>
+
+    <argumentList for="Play\Hard\Code\GraphicConsole\Digraph\LabelAssemblerComposite">
+        <arguments>
+            <argument name="processors" xsi:type="array">
+                <item name="left_edge" xsi:type="object">Play\Hard\Code\GraphicConsole\Digraph\LeftEdge</item>
+                <item name="between_edge" xsi:type="object">Play\Hard\Code\GraphicConsole\Digraph\BetweenEdge</item>
+                <item name="right_edge" xsi:type="object">Play\Hard\Code\GraphicConsole\Digraph\RightEdge</item>
+            </argument>
+        </arguments>
+    </argumentList>
+
+    <argumentList for="Play\Hard\Frame\Cli\ConsoleManagerPool">
+        <arguments>
+            <argument name="usageMessage" xsi:type="scalar">usage:%s%s%s -t %s a mandatory argument indicates the type of the CLI Command Processor it needs to run ["btree" is currently only available] %s %s%s -c %s an optional argument to define the capacity of the node. THE CAPACITY MUST BE >= 3 [default capacity will be used otherwise: 3]%s %s%s -s %s an optional argument to embed int set, e.g. -s "1,2,3,4" [if not specified AND no file specified [-f], the default range will be used -100 to 100]%s %s%s -d %s an optional argument when used of which the B-Tree`s node structure will be dump in json format. It will be placed in [media/dump] folder. This folder contains examples as well%s %s%s -g %s an optional argument using which the script will draw the B-Tree structure in the picture. It will be placed in [media/graph] folder. This folder contains examples as well %s %s%s -f %s an optional argument indicates the filename it needs to use to load the number set%s%s%s%s if [-f] not specified AND no set [-s] specified, the default range will be used -100 to 100 %s%s%s%s%s the file should be located under [media/number-set] folder (check example: num_set_exmpl.json)%s%s%sExamples:%s%s%s 1. bin/console -t btree -c 3 -f num_set_exmpl.json -g -d%s%s%s%s this command will start the [btree] processor which will use the [-f] file 'num_set_exmpl.json' to build a b-tree with a capacity [-c] of '3'. %s%s%s It will also create a b-tree dump [-d] in the 'media/dump' folder and a b-tree image [-g] in the 'media/graph' folder %s%s%s%s bin/console -t btree -c 3 -s "1, 2, 3, 6, 9, 4" -g -d%s%s %s%s this command will do exactly the same thing but uses the given set [-s] instead of the file [-f]%s%s</argument>
+            <argument name="cliCommands" xsi:type="array">
+                <item name="btree" xsi:type="object">Play\Hard\Code\Btree\Cli\BtreeProcessorInterface</item>
+                <item name="btreeint" xsi:type="object">Play\Hard\Code\BtreeExmplFromInternet\Cli\BtreeExmplFromInternetProcessorInterface</item>
+            </argument>
+        </arguments>
+    </argumentList>
+
+    <argumentList for="Play\Hard\Code\Btree\Model\Balance\KeyManagerComposite">
+        <arguments>
+            <argument name="positionManagers" xsi:type="array">
+                <item name="folder" xsi:type="scalar"/>
+                <item name="insert_key_node" xsi:type="object">Play\Hard\Code\Btree\Model\Balance\InsertKeyNode</item>
+                <item name="split_the_node" xsi:type="object">Play\Hard\Code\Btree\Model\Balance\KeySplitsNode</item>
+            </argument>
+        </arguments>
+    </argumentList>
+
+    <argumentList for="Play\Hard\Code\Btree\Model\Balance\KeySplitsNode">
+        <arguments>
+            <argument name="keyNodeLinker" xsi:type="object">Play\Hard\Code\Btree\Model\KeyNodeLinkerInterface</argument>
+        </arguments>
+    </argumentList>
+
+    <argumentList for="Play\Hard\Code\Btree\Model\TreeElement\BTreeStructure">
+        <arguments>
+            <argument name="nodeCrawler" xsi:type="object">Play\Hard\Code\Btree\Model\NodeCrawlerInterface</argument>
+        </arguments>
+    </argumentList>
+
+    <argumentList for="Play\Hard\Code\Btree\Model\TreeElement\BTreeStructure">
+        <arguments>
+            <argument name="dataDumper" xsi:type="object">Play\Hard\Code\Dump\DataDumperInterface</argument>
+        </arguments>
+    </argumentList>
+
+    <argumentList for="Play\Hard\Code\Utility\FileManager">
+        <arguments>
+            <argument name="mediaFolder" xsi:type="scalar">media</argument>
+            <argument name="fileFormat" xsi:type="scalar">json</argument>
+        </arguments>
+    </argumentList>
+
+    <argumentList for="Play\Hard\Frame\Cli\Argument\ArgumentProvider">
+        <arguments>
+            <argument name="dirName" xsi:type="scalar">number-sets</argument>
+        </arguments>
+    </argumentList>
+
+    <argumentList for="Play\Hard\Code\Dump\DataDumper">
+        <arguments>
+            <argument name="dirName" xsi:type="scalar">dump</argument>
+            <argument name="fileName" xsi:type="scalar">tree_dump</argument>
+        </arguments>
+    </argumentList>
+
+    <argumentList for="Play\Hard\Code\GraphicConsole\ImageExporter">
+        <arguments>
+            <argument name="imageFormat" xsi:type="scalar">jpeg</argument>
+            <argument name="imageName" xsi:type="scalar">b_tree_graph</argument>
+            <argument name="executor" xsi:type="scalar">dot</argument>
+            <argument name="folder" xsi:type="scalar">graph</argument>
+        </arguments>
+    </argumentList>
+</config>

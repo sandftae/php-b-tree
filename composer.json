@@ -1,0 +1,38 @@
+{
+  "name": "php/b-tree",
+  "description": "Just a project to quickly create a b-tree and demonstrate how it works for anyone who is a PHP developer and would like to see a PHP example.",
+  "license": "MIT",
+  "type": "project",
+  "keywords": [
+    "b-tree structure",
+    "balanced b-tree",
+    "data structure",
+    "balanced tree",
+    "b-tree",
+    "tree",
+    "php"
+  ],
+  "authors": [
+    {
+      "name": "sandftae",
+      "email": "sandftae@gmail.com"
+    }
+  ],
+  "require": {
+    "kiwilan/php-xml-reader": "^1.0",
+    "alom/graphviz": "^2.0",
+    "zircote/uuid": "^0.1.0",
+    "php": ">=8.3.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Play\\Hard\\Frame\\": "app/frame/",
+      "Play\\Hard\\Code\\": "app/code/"
+    },
+    "files": [
+      "app/frame/function/filesystem.php",
+      "app/frame/function/iter.php",
+      "app/frame/function/func.php"
+    ]
+  }
+}

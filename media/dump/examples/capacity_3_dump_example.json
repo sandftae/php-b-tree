@@ -1,0 +1,373 @@
+// PLEASE REMOVE THIS COMMENT BEFORE USING!
+//
+// This set of numbers was used to construct b-trees:
+//[1, 6, 9, 11, 5, 3, 37, 20, 16, 17, 18, 40, 45, 12, 10, 8, 15, 30, 35, 19, -1, -2, -6, -8, -20, -17, -10, -5, -9, -3, -4, -7, -30, -35, -34, -31, -41, -47, -45, -46, 0, 50, 60, 55, 58, 47, 33, 43]
+
+{
+  "maxKeys": 3,
+  "keyType": "number",
+  "nodeData": {
+    "name": {
+      "id": "12cbd433-094f-5576-c4e4-e0b075a9a82b",
+      "keys": [
+        -1
+      ]
+    },
+    "children": [
+      {
+        "name": {
+          "id": "4b26228a-5593-8af7-aebf-97664007313e",
+          "keys": [
+            -30
+          ]
+        },
+        "children": [
+          {
+            "name": {
+              "id": "341b5597-b8a4-61e0-13ce-21f5c37a40c4",
+              "keys": [
+                -41
+              ]
+            },
+            "children": [
+              {
+                "name": {
+                  "id": "6acb0fee-a154-a31a-0ed5-a7220d6ca6e1",
+                  "keys": [
+                    -46
+                  ]
+                },
+                "children": [
+                  {
+                    "name": {
+                      "id": "c3eadc85-5dde-e22c-655d-35b808013d22",
+                      "keys": [
+                        -47
+                      ]
+                    }
+                  },
+                  {
+                    "name": {
+                      "id": "5f4628cb-cdf6-1996-4c89-055871ae3413",
+                      "keys": [
+                        -45
+                      ]
+                    }
+                  }
+                ]
+              },
+              {
+                "name": {
+                  "id": "d447af08-da56-1c58-8eb5-65cde37e86e9",
+                  "keys": [
+                    -34
+                  ]
+                },
+                "children": [
+                  {
+                    "name": {
+                      "id": "b0791938-b35c-e75f-4a83-6eeeeaeb250a",
+                      "keys": [
+                        -35
+                      ]
+                    }
+                  },
+                  {
+                    "name": {
+                      "id": "82ff0fe9-2e4b-8eee-42f5-1c91f431138e",
+                      "keys": [
+                        -31
+                      ]
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": {
+              "id": "ca83d319-f308-c1e0-e08d-dfbbefea8491",
+              "keys": [
+                -9
+              ]
+            },
+            "children": [
+              {
+                "name": {
+                  "id": "a4fde1e3-68ec-1704-afa3-64bb217980e9",
+                  "keys": [
+                    -17
+                  ]
+                },
+                "children": [
+                  {
+                    "name": {
+                      "id": "a3cfad21-0233-b296-5014-05c8e1e44fca",
+                      "keys": [
+                        -20
+                      ]
+                    }
+                  },
+                  {
+                    "name": {
+                      "id": "236777e8-e2af-6346-bd3a-479334bb56fa",
+                      "keys": [
+                        -10
+                      ]
+                    }
+                  }
+                ]
+              },
+              {
+                "name": {
+                  "id": "8ed479ab-7d5f-a581-2205-740d2ee3993f",
+                  "keys": [
+                    -6,
+                    -3
+                  ]
+                },
+                "children": [
+                  {
+                    "name": {
+                      "id": "a53671d8-dfed-9537-3dac-b02102a3f82a",
+                      "keys": [
+                        -8,
+                        -7
+                      ]
+                    }
+                  },
+                  {
+                    "name": {
+                      "id": "a5d008e1-4ae3-d288-0fb2-520c3728830e",
+                      "keys": [
+                        -5,
+                        -4
+                      ]
+                    }
+                  },
+                  {
+                    "name": {
+                      "id": "59a85a9c-6ff0-ed11-1a10-7ef3b2279814",
+                      "keys": [
+                        -2
+                      ]
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": {
+          "id": "65f993c9-269e-0187-7a56-70b5a4d420c5",
+          "keys": [
+            11,
+            35
+          ]
+        },
+        "children": [
+          {
+            "name": {
+              "id": "9edc472a-2f81-4d59-bd31-3cb0ea39d0fa",
+              "keys": [
+                6
+              ]
+            },
+            "children": [
+              {
+                "name": {
+                  "id": "7ceb48be-9959-b5f8-ec7b-3b217a330728",
+                  "keys": [
+                    3
+                  ]
+                },
+                "children": [
+                  {
+                    "name": {
+                      "id": "0107232c-3e75-8cfb-f7e5-87e428132105",
+                      "keys": [
+                        0,
+                        1
+                      ]
+                    }
+                  },
+                  {
+                    "name": {
+                      "id": "65017c34-99d0-a93b-8881-c0392f17e7fc",
+                      "keys": [
+                        5
+                      ]
+                    }
+                  }
+                ]
+              },
+              {
+                "name": {
+                  "id": "bd054ef2-69f8-6389-0723-6ccf068272c6",
+                  "keys": [
+                    9
+                  ]
+                },
+                "children": [
+                  {
+                    "name": {
+                      "id": "9a5e09b2-9b37-dcb8-00e6-f97157644df7",
+                      "keys": [
+                        8
+                      ]
+                    }
+                  },
+                  {
+                    "name": {
+                      "id": "12e517dd-ad0f-58f2-2eda-cc5accaa3700",
+                      "keys": [
+                        10
+                      ]
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": {
+              "id": "929efe29-043d-b600-1690-e55ada6f9933",
+              "keys": [
+                17
+              ]
+            },
+            "children": [
+              {
+                "name": {
+                  "id": "428b8be6-5ed4-29e0-603a-b5b72f012319",
+                  "keys": [
+                    15
+                  ]
+                },
+                "children": [
+                  {
+                    "name": {
+                      "id": "17f88b06-8b48-36b2-c7ef-3ab741b7b23b",
+                      "keys": [
+                        12
+                      ]
+                    }
+                  },
+                  {
+                    "name": {
+                      "id": "76bc4152-6d14-c8ec-9871-5b4f04e59a0a",
+                      "keys": [
+                        16
+                      ]
+                    }
+                  }
+                ]
+              },
+              {
+                "name": {
+                  "id": "ca00a281-29e2-73dd-d133-00fc2118db93",
+                  "keys": [
+                    20
+                  ]
+                },
+                "children": [
+                  {
+                    "name": {
+                      "id": "8c8ebf75-0776-1f16-f098-aa03cb80da32",
+                      "keys": [
+                        18,
+                        19
+                      ]
+                    }
+                  },
+                  {
+                    "name": {
+                      "id": "71ca3494-f0c2-67bd-0ec3-b01a71d78203",
+                      "keys": [
+                        30,
+                        33
+                      ]
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": {
+              "id": "09856e41-ded4-c05d-cfdc-04d848d76823",
+              "keys": [
+                50
+              ]
+            },
+            "children": [
+              {
+                "name": {
+                  "id": "70f84120-f291-9b4b-083f-92ac43b8c4db",
+                  "keys": [
+                    40,
+                    45
+                  ]
+                },
+                "children": [
+                  {
+                    "name": {
+                      "id": "8351b14d-bf07-2139-b428-0db8a70c325a",
+                      "keys": [
+                        37
+                      ]
+                    }
+                  },
+                  {
+                    "name": {
+                      "id": "26a84628-3cf2-b4f3-aa52-498ef30478f8",
+                      "keys": [
+                        43
+                      ]
+                    }
+                  },
+                  {
+                    "name": {
+                      "id": "b1d581eb-e1d8-a29b-be14-a1be123fe7a9",
+                      "keys": [
+                        47
+                      ]
+                    }
+                  }
+                ]
+              },
+              {
+                "name": {
+                  "id": "be09e9d1-7db5-60e6-3e36-11859bf2f285",
+                  "keys": [
+                    58
+                  ]
+                },
+                "children": [
+                  {
+                    "name": {
+                      "id": "4a4ad30c-f02d-4e61-8b76-4c5d93ab47f4",
+                      "keys": [
+                        55
+                      ]
+                    }
+                  },
+                  {
+                    "name": {
+                      "id": "addfd7fa-668e-bdd4-edac-3d7dfcd1ba33",
+                      "keys": [
+                        60
+                      ]
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,298 @@
+// PLEASE REMOVE THIS COMMENT BEFORE USING!
+//
+// This set of numbers was used to construct b-trees:
+//[1, 6, 9, 11, 5, 3, 37, 20, 16, 17, 18, 40, 45, 12, 10, 8, 15, 30, 35, 19, -1, -2, -6, -8, -20, -17, -10, -5, -9, -3, -4, -7, -30, -35, -34, -31, -41, -47, -45, -46, 0, 50, 60, 55, 58, 47, 33, 43]
+
+{
+  "maxKeys": 4,
+  "keyType": "number",
+  "nodeData": {
+    "name": {
+      "id": "5e64657c-8cec-e8c8-5c6e-25d3af0c30d8",
+      "keys": [
+        -4,
+        9
+      ]
+    },
+    "children": [
+      {
+        "name": {
+          "id": "c45d969a-f1cd-279e-33db-8b2bedc557db",
+          "keys": [
+            -31,
+            -10
+          ]
+        },
+        "children": [
+          {
+            "name": {
+              "id": "d64c44c9-0900-e4b6-8268-42167cec3499",
+              "keys": [
+                -45,
+                -35
+              ]
+            },
+            "children": [
+              {
+                "name": {
+                  "id": "7793b6ab-fe33-11ef-843c-2f0d9879ef10",
+                  "keys": [
+                    -47,
+                    -46
+                  ]
+                }
+              },
+              {
+                "name": {
+                  "id": "0a4104db-45c1-3ca7-49f5-c9aa1d8a4307",
+                  "keys": [
+                    -41
+                  ]
+                }
+              },
+              {
+                "name": {
+                  "id": "92fc992c-d14c-e10b-efae-a00aa4f22f24",
+                  "keys": [
+                    -34
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            "name": {
+              "id": "155123d7-04b0-d638-4289-3eb7b593da75",
+              "keys": [
+                -20
+              ]
+            },
+            "children": [
+              {
+                "name": {
+                  "id": "3fb452f1-4525-7c95-0622-feb2c301cf2e",
+                  "keys": [
+                    -30
+                  ]
+                }
+              },
+              {
+                "name": {
+                  "id": "0a4de140-b443-0cc2-cf33-d61489d0eac3",
+                  "keys": [
+                    -17
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            "name": {
+              "id": "928e35b6-d688-5e9d-2628-8164a0485fe7",
+              "keys": [
+                -8
+              ]
+            },
+            "children": [
+              {
+                "name": {
+                  "id": "5f88ed61-62e0-95c0-225c-4f7f850ce3ec",
+                  "keys": [
+                    -9
+                  ]
+                }
+              },
+              {
+                "name": {
+                  "id": "7d010361-be2a-654f-5426-7c50aa5b177d",
+                  "keys": [
+                    -7,
+                    -6,
+                    -5
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": {
+          "id": "38fd41b6-1f5c-31ef-d245-73f72a3cf4c6",
+          "keys": [
+            1
+          ]
+        },
+        "children": [
+          {
+            "name": {
+              "id": "5a8dbdab-4299-5491-9a1f-1b73a952407d",
+              "keys": [
+                -2
+              ]
+            },
+            "children": [
+              {
+                "name": {
+                  "id": "0f70dde1-6c62-aefa-3de4-6436a836ad19",
+                  "keys": [
+                    -3
+                  ]
+                }
+              },
+              {
+                "name": {
+                  "id": "3baa1484-a9b2-e764-5e45-d54d926b3728",
+                  "keys": [
+                    -1,
+                    0
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            "name": {
+              "id": "5c96e7a1-faa9-4072-16d9-5bc37de11341",
+              "keys": [
+                5
+              ]
+            },
+            "children": [
+              {
+                "name": {
+                  "id": "9beb9d09-a5a4-153b-a79d-395a516d2b5e",
+                  "keys": [
+                    3
+                  ]
+                }
+              },
+              {
+                "name": {
+                  "id": "572c080b-0428-7d19-8569-ae0d56c78faa",
+                  "keys": [
+                    6,
+                    8
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": {
+          "id": "cc8cd50f-a515-f56d-79f5-e160bb1b206e",
+          "keys": [
+            17,
+            40
+          ]
+        },
+        "children": [
+          {
+            "name": {
+              "id": "fcd7c0a2-20cc-7475-897a-69dad441be4a",
+              "keys": [
+                12
+              ]
+            },
+            "children": [
+              {
+                "name": {
+                  "id": "ed0455b5-0cfb-c5d9-3a87-38e61c3170b3",
+                  "keys": [
+                    10,
+                    11
+                  ]
+                }
+              },
+              {
+                "name": {
+                  "id": "0c7d93a0-f27f-dfa7-e118-c933a67e17c7",
+                  "keys": [
+                    15,
+                    16
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            "name": {
+              "id": "5eb4fb40-9614-cadd-430d-6d1ec1f4f954",
+              "keys": [
+                20,
+                35
+              ]
+            },
+            "children": [
+              {
+                "name": {
+                  "id": "4511d60e-d9eb-7462-726a-8277a17367c2",
+                  "keys": [
+                    18,
+                    19
+                  ]
+                }
+              },
+              {
+                "name": {
+                  "id": "76bd31e6-19b5-3eaa-f491-530d4b10d9ec",
+                  "keys": [
+                    30,
+                    33
+                  ]
+                }
+              },
+              {
+                "name": {
+                  "id": "b130cb23-7a5e-9fe7-1613-d0ca4f475508",
+                  "keys": [
+                    37
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            "name": {
+              "id": "4b47c4d1-870a-5b34-754b-c0cf5d354da2",
+              "keys": [
+                47,
+                55
+              ]
+            },
+            "children": [
+              {
+                "name": {
+                  "id": "89fddbf3-6200-318e-7188-8d60568ec8de",
+                  "keys": [
+                    43,
+                    45
+                  ]
+                }
+              },
+              {
+                "name": {
+                  "id": "71a1d28f-2e52-1fd6-9d0c-27273eae7428",
+                  "keys": [
+                    50
+                  ]
+                }
+              },
+              {
+                "name": {
+                  "id": "3bca12b4-688e-e31f-df51-b5ccf87b0f75",
+                  "keys": [
+                    58,
+                    60
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

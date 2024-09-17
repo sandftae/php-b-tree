@@ -1,0 +1,178 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "f3faf0c800daef5d2bc472a9aafdb7fa",
+    "packages": [
+        {
+            "name": "alom/graphviz",
+            "version": "v2.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/alexandresalome/graphviz.git",
+                "reference": "65fa935f3f8bcfba1bcba8cd02fcbec76d720aab"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/alexandresalome/graphviz/zipball/65fa935f3f8bcfba1bcba8cd02fcbec76d720aab",
+                "reference": "65fa935f3f8bcfba1bcba8cd02fcbec76d720aab",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=8.0,<9.0"
+            },
+            "require-dev": {
+                "ext-dom": "*",
+                "phpunit/phpunit": "^9.5",
+                "symfony/finder": "^5.4|^6.1",
+                "symfony/process": "^5.4|^6.1",
+                "symfony/var-dumper": "^5.4|^6.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Graphviz\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Alexandre Salomé",
+                    "email": "graphviz@pub.salome.fr",
+                    "homepage": "https://alexandre.salome.fr"
+                }
+            ],
+            "description": "Graphviz generation for PHP",
+            "homepage": "https://github.com/alexandresalome/graphviz",
+            "keywords": [
+                "dot",
+                "graphviz"
+            ],
+            "support": {
+                "issues": "https://github.com/alexandresalome/graphviz/issues",
+                "source": "https://github.com/alexandresalome/graphviz/tree/v2.0.1"
+            },
+            "time": "2024-04-25T20:07:35+00:00"
+        },
+        {
+            "name": "kiwilan/php-xml-reader",
+            "version": "1.0.11",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/kiwilan/php-xml-reader.git",
+                "reference": "c271326317195cbcfb7ebef74e7ecf3dce59ce26"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/kiwilan/php-xml-reader/zipball/c271326317195cbcfb7ebef74e7ecf3dce59ce26",
+                "reference": "c271326317195cbcfb7ebef74e7ecf3dce59ce26",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^8.0"
+            },
+            "require-dev": {
+                "laravel/pint": "^1.2",
+                "pestphp/pest": "^1.20",
+                "phpstan/phpstan": "^1.10",
+                "spatie/ray": "^1.28"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Kiwilan\\XmlReader\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Ewilan Rivière",
+                    "email": "ewilan.riviere@gmail.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "PHP package to read XML with nice API.",
+            "homepage": "https://github.com/kiwilan/php-xml-reader",
+            "keywords": [
+                "php",
+                "xml"
+            ],
+            "support": {
+                "issues": "https://github.com/kiwilan/php-xml-reader/issues",
+                "source": "https://github.com/kiwilan/php-xml-reader/tree/v1.0.11"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/kiwilan",
+                    "type": "github"
+                }
+            ],
+            "time": "2023-09-20T10:38:26+00:00"
+        },
+        {
+            "name": "zircote/uuid",
+            "version": "0.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/zircote/Uuid.git",
+                "reference": "44af337a93d96e74bde69b198eb700c3c3eb79a6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/zircote/Uuid/zipball/44af337a93d96e74bde69b198eb700c3c3eb79a6",
+                "reference": "44af337a93d96e74bde69b198eb700c3c3eb79a6",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Uuid": "library",
+                    "UuidTests": "tests/library"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache2"
+            ],
+            "authors": [
+                {
+                    "name": "Robert Allen",
+                    "email": "zircote@gmail.com",
+                    "homepage": "http://www.zircote.com"
+                }
+            ],
+            "description": "A PHP UUID object",
+            "homepage": "https://github.com/zircote/Uuid",
+            "keywords": [
+                "Unique ID",
+                "hash",
+                "random",
+                "uuid"
+            ],
+            "support": {
+                "issues": "https://github.com/zircote/Uuid/issues",
+                "source": "https://github.com/zircote/Uuid/tree/0.1.0"
+            },
+            "time": "2012-12-06T22:53:36+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": {
+        "php": ">=8.3.0"
+    },
+    "platform-dev": [],
+    "plugin-api-version": "2.6.0"
+}
