@@ -7,7 +7,7 @@ By ``set of numbers`` implies ``unique numbers only``.
 - [overview](#overview)
 - [installation and dependencies](#installation)
 - [demo: built-in B-Tree visual representation](#built-in-b-tree-visual-representation)
-- [demo: dump the B-Tree and see a visual representation using external sources **[external sources are provided]**](#dump-the-b-tree-data-structure-and-see-a-visual-representation-of-it-using-external-sources)
+- [demo: dump the B-Tree and see a visual representation using external sources](#dump-the-b-tree-data-structure-and-see-a-visual-representation-of-it-using-external-sources)
 - [how to use and how to specify your own number set](#how-to-use-how-to-start)
 - [usage console command](#usage-console-command)
 - [PHP version](#php-version)
@@ -192,7 +192,7 @@ The ``num_set_exmpl.json`` is an example. You can create and name it as you want
 > **Note:**
 > the file must be located under ``media/number-sets`` folder
 
-Check existing one as an example: ``media/number-sets/num_set_exmpl.json``
+Check the existing one as an example: ``media/number-sets/num_set_exmpl.json``
 
 > **Note:**
 > the number set file should always be a ``JSON`` file containing ``only one`` set. 
