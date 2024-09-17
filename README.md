@@ -1,7 +1,7 @@
 # PHP B-Tree
-A simple and ready-to-use project which is able to create `B-Tree` representation (`images and B-Tree Data Structure dump`) from a set of number given.
+A simple and ready-to-use project that can create a `B-Tree` representation (`images and B-Tree Data Structure dump`) from a set of numbers given.
 
-By ``set of number`` of numbers imply ``unique numbers only``.
+By ``set of numbers`` implies ``unique numbers only``.
 
 ### Table of content:
 - [overview](#overview)
@@ -15,10 +15,10 @@ By ``set of number`` of numbers imply ``unique numbers only``.
 
 ## Overview
 #### The main goals are to create a B-Tree project with is:
-- is able to build visual representation of the B-Tree [**means, an image**]
-- is able to dump B-Tree Data Structure to see the structure with help of external source
+- can build a visual representation of the B-Tree [**means, an image**]
+- can dump B-Tree Data Structure to see the structure with the help of an external source
 - is in OOP-like style
-- is finished and ready-to-use project, not a lib
+- is a finished and ready-to-use project, not a lib
 
 #### For whom
 - learners/students
@@ -38,7 +38,7 @@ sh: dot: not found
 
 install the **graphviz** library:
 
-for **docker** (run it inside container or add to the Dockerfile)
+for **docker** (run it inside a container or add it to the Dockerfile)
  ```bash
  apk add graphviz
 ```
@@ -47,7 +47,7 @@ for **linux** and **debian**
  ```bash
 sudo apt install graphviz
 ```
-or visit official [site](https://graphviz.org/download/)
+or visit the official [site](https://graphviz.org/download/)
 
 run **composer** install and dump command
 
@@ -77,7 +77,7 @@ You can see more examples here: ````media/graph/examples````
 
 ## Dump the B-Tree Data Structure and see a visual representation of it using external sources
 
-This is an example of a B-Tree dump for capacity of 5:
+This is an example of a B-Tree dump for a capacity of 5:
 ```json lines
 {
   "maxKeys": 5,
@@ -158,8 +158,8 @@ B-Tree Builder with the following CLI command:
 supa_mega@user:$ bin/console -t btree -c 3 -s "1, 2, 3, 4, 5, 6" -g -d
 ```
 #### where:
-- ``-t`` type of structure. This one is required one. Currently only ``btree`` is available
-- ``-c`` is ``capacity``. Optional one. Default ``capacity`` is 3. You can specify any value of the capacity. The capacity ``always`` must be equal or greater then 3 [capacity >= 3]
+- ``-t`` type of structure. This one is a required one. Currently only ``btree`` is available
+- ``-c`` is ``capacity``. Optional one. The default ``capacity`` is 3. You can specify any value of the capacity. The capacity ``always`` must be equal or greater then 3 [capacity >= 3]
 - ``-s`` is ``number set`` to use to build a tree. Optional one. ``"1, 2, 3, 4, 5, 6"`` these are the numbers that need to be used, and they should always be comma-separated and quoted
 - ``-g`` is a flag to create an image of the B-Tree for the set of numbers provided by ``-s`` or by ``-f`` (see below) flags. If ``-g`` is not provided, the image will not be created
 - ``-d`` is a flag to create a dump. If ``-d`` is not provided, the dump will not be created.
@@ -174,7 +174,7 @@ The image [``-g``] will be located here: ``media/graph`` folder.
 > **Note:**
 > Any combination of flags you specify in the CLI will not create an image or dump without these ``-g`` and ``-d`` flags.
 > The B-Tree structure itself will be built and the CLI will finish successfully, but there will be no visual representation or dump.
-> So, just specify the flag if you need visual representation ot the dump
+> So, just specify the flag if you need a visual representation of the dump
 
 How to use dump has been described [here](#dump-the-b-tree-data-structure-and-see-a-visual-representation-of-it-using-external-sources)
 
@@ -209,10 +209,10 @@ usage:
                  -t      a mandatory argument indicates the type of the CLI Command Processor it needs to run ["btree" is currently only available] 
                  -c      an optional argument to define the capacity of the node. THE CAPACITY MUST BE >= 3 [default capacity will be used otherwise: 3]
                  -s      an optional argument to embed int set, e.g. -s "1,2,3,4" [if not specified AND no file specified [-f], the default range will be used -100 to 100]
-                 -d      an optional argument when used of which the B-Tree`s node structure will be dump in json format. It will be placed in [media/dump] folder. This folder contains examples as well
+                 -d      an optional argument when used of which the B-Tree`s node structure will be dumped in JSON format. It will be placed in [media/dump] folder. This folder contains examples as well
                  -g      an optional argument using which the script will draw the B-Tree structure in the picture. It will be placed in [media/graph] folder. This folder contains examples as well 
                  -f      an optional argument indicates the filename it needs to use to load the number set
-                         if [-f] not specified AND no set [-s] specified, the default range will be used -100 to 100    
+                         if [-f] is not specified AND no set [-s] specified, the default range will be used -100 to 100    
                          the file should be located under [media/number-set] folder (check example: num_set_exmpl.json)         
 Examples:
                  1. bin/console -t btree -c 3 -f num_set_exmpl.json -g -d
@@ -222,7 +222,7 @@ Examples:
 
                  bin/console -t btree -c 3 -s "1, 2, 3, 6, 9, 4" -g -d
 
-                 this command will do exactly the same thing but uses the given set [-s] instead of the file [-f]
+                 this command will do the same thing but uses the given set [-s] instead of the file [-f]
 ```
 
 ## PHP version
@@ -230,7 +230,7 @@ Examples:
 Requires PHP 8.3 or higher
 
 ## Helpful sources
-A site that will help you build your own B-Tree: [CLICK ME](https://www.cs.usfca.edu/~galles/visualization/BTree.html)
+A site that will help you build your B-Tree: [CLICK ME](https://www.cs.usfca.edu/~galles/visualization/BTree.html)
 
 An [article](https://blog.jcole.us/2013/01/10/btree-index-structures-in-innodb/) explaining technical moments of the *B+Tree*
 
