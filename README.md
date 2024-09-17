@@ -59,19 +59,19 @@ composer install && composer dump-autoload -o
 Examples of visual representation of B-trees that are built by the ``php/b-tree`` for various **capacities** given:
 
 **capacity of 3**
-![alt text](media/graph/exmples/capacity_3_btree_graph_example.jpeg)
+![alt text](media/graph/examples/capacity_3_btree_graph_example.jpeg)
 
 **capacity of 4**
-![alt text](media/graph/exmples/capacity_4_btree_graph_example.jpeg)
+![alt text](media/graph/examples/capacity_4_btree_graph_example.jpeg)
 
 **capacity of 5**
-![alt text](media/graph/exmples/capacity_5_btree_graph_example.jpeg)
+![alt text](media/graph/examples/capacity_5_btree_graph_example.jpeg)
 
 **capacity of 6**
-![alt text](media/graph/exmples/capacity_6_btree_graph_example.jpeg)
+![alt text](media/graph/examples/capacity_6_btree_graph_example.jpeg)
 
 **capacity of 7**
-![alt text](media/graph/exmples/capacity_7_btree_graph_example.jpeg)
+![alt text](media/graph/examples/capacity_7_btree_graph_example.jpeg)
 
 You can see more examples here: ````media/graph/examples````
 
@@ -142,7 +142,7 @@ To see what a B-Tree dump looks like, **import** the dump here: [CLICK ME](https
 > on the site mentioned above
 
 *Visual representation of the dump above with capacity of 5 **(tree-order(p))***
-![alt text](media/graph/exmples/capacity_5_dump_image_representation_big_num_set_example.png)
+![alt text](media/graph/examples/capacity_5_dump_image_representation_big_num_set_example.png)
 
 You can see more test dumps here: ````media/dump/examples```` folder.
 
