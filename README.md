@@ -3,6 +3,9 @@ A simple and ready-to-use project that can create a `B-Tree` representation (`im
 
 By ``set of numbers`` implies ``unique numbers only``.
 
+Just a tool to learn B-Tree written in PHP.
+
+
 ### Table of content:
 - [overview](#overview)
 - [installation and dependencies](#installation)
