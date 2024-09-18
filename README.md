@@ -1,5 +1,5 @@
-# PHP B-Tree
-A simple and ready-to-use project that can create a `B-Tree` representation (`images and B-Tree Data Structure dump`) from a set of numbers given.
+# PHP B-Tree [**balanced**]
+A simple and ready-to-use project that can create a balanced `B-Tree` representation (`images and B-Tree Data Structure dump`) from a set of numbers given.
 
 By ``set of numbers`` implies ``unique numbers only``.
 
