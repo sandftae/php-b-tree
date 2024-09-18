@@ -158,8 +158,8 @@ B-Tree Builder with the following CLI command:
 supa_mega@user:$ bin/console -t btree -c 3 -s "1, 2, 3, 4, 5, 6" -g -d
 ```
 #### where:
-- ``-t`` type of structure. This one is a required one. Currently only ``btree`` is available
-- ``-c`` is ``capacity``. Optional one. The default ``capacity`` is 3. You can specify any value of the capacity. The capacity ``always`` must be equal or greater then 3 [capacity >= 3]
+- ``-t`` type of structure. This one is required. Currently only ``btree`` is available
+- ``-c`` is ``capacity``. Optional one. The default ``capacity`` is 3. You can specify any value of the capacity. The capacity ``always`` must be equal or greater than 3 [capacity >= 3]
 - ``-s`` is ``number set`` to use to build a tree. Optional one. ``"1, 2, 3, 4, 5, 6"`` these are the numbers that need to be used, and they should always be comma-separated and quoted
 - ``-g`` is a flag to create an image of the B-Tree for the set of numbers provided by ``-s`` or by ``-f`` (see below) flags. If ``-g`` is not provided, the image will not be created
 - ``-d`` is a flag to create a dump. If ``-d`` is not provided, the dump will not be created.
@@ -173,8 +173,8 @@ The image [``-g``] will be located here: ``media/graph`` folder.
 
 > [!NOTE]
 > Any combination of flags you specify in the CLI will not create an image or dump without these ``-g`` and ``-d`` flags.
-> The B-Tree structure itself will be built and the CLI will finish successfully, but there will be no visual representation or dump.
-> So, just specify the flag if you need a visual representation of the dump
+> The B-Tree structure itself will be built and the CLI will finish successfully, but there will be no visual representation or dumps created.
+> So, just specify the flag if you need a visual representation or a dump
 
 How to use dump has been described [here](#dump-the-b-tree-data-structure-and-see-a-visual-representation-of-it-using-external-sources)
 
@@ -194,7 +194,7 @@ The ``num_set_exmpl.json`` is an example. You can create and name it as you want
 
 Check the existing one as an example: ``media/number-sets/num_set_exmpl.json``
 
-> [!NOTE]
+> [!CAUTION]
 > the number set file should always be a ``JSON`` file containing ``only one`` set. 
 > Check the example mentioned above
 
