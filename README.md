@@ -136,7 +136,7 @@ This is an example of a B-Tree dump for a capacity of 5:
 #### Visual representation using external sources
 
 To see what a B-Tree dump looks like, **import** the dump here: [CLICK ME](https://tree-visualizer-tvhn.onrender.com/)
-> **IMPORTANT:**
+> [!IMPORTANT]
 > to build a visual representation of the B-Tree, you need to adjust the **tree-order(p)** which is the **capacity**, actually.
 > The **tree-order(p)** **should be the same** as the **capacity**  for the **dump**, and you can set it up by click on **Modify** tab
 > on the site mentioned above
@@ -148,7 +148,7 @@ You can see more test dumps here: ````media/dump/examples```` folder.
 
 ## How to use? How to start?
 
-> **Note:**
+> [!NOTE]
 > you need to run CLI command from the root folder for ``bin`` one
  
 The project itself does not have an interface/frontend yet, and to get a B-Tree dump or a B-Tree image you need to run 
@@ -164,14 +164,14 @@ supa_mega@user:$ bin/console -t btree -c 3 -s "1, 2, 3, 4, 5, 6" -g -d
 - ``-g`` is a flag to create an image of the B-Tree for the set of numbers provided by ``-s`` or by ``-f`` (see below) flags. If ``-g`` is not provided, the image will not be created
 - ``-d`` is a flag to create a dump. If ``-d`` is not provided, the dump will not be created.
 
-> **Note**
+> [!NOTE]
 > If ``-s`` and ``-f`` (see below) flags are not provided, then just a range of numbers from -100 to 100 will be used
  
 The dump [``-d``] will be located here: ``media/dump`` folder.
 
 The image [``-g``] will be located here: ``media/graph`` folder.
 
-> **Note:**
+> [!NOTE]
 > Any combination of flags you specify in the CLI will not create an image or dump without these ``-g`` and ``-d`` flags.
 > The B-Tree structure itself will be built and the CLI will finish successfully, but there will be no visual representation or dump.
 > So, just specify the flag if you need a visual representation of the dump
@@ -189,12 +189,12 @@ supa_mega@user:$ bin/console -t btree -c 3 -f num_set_exmpl.json -g -d
 
 The ``num_set_exmpl.json`` is an example. You can create and name it as you want.
 
-> **Note:**
+> [!NOTE]
 > the file must be located under ``media/number-sets`` folder
 
 Check the existing one as an example: ``media/number-sets/num_set_exmpl.json``
 
-> **Note:**
+> [!NOTE]
 > the number set file should always be a ``JSON`` file containing ``only one`` set. 
 > Check the example mentioned above
 
