@@ -14,14 +14,14 @@ use Play\Hard\Frame\Config\Enum\EnumDiArgTypes;
 final class ArgumentListResolver implements CompositeResolverInterface
 {
     /** @const string */
-    public const ARG_LIST_LEAF_NAME = 'argumentList';
+    public const ARG_LIST_NODE_NAME = 'argumentList';
 
     /** @inheritDoc */
     public function resolve(array $content): array
     {
         $bindings = [];
-        if (isset($content[self::ARG_LIST_LEAF_NAME])) {
-            foreach ($content[self::ARG_LIST_LEAF_NAME] as $scalar) {
+        if (isset($content[self::ARG_LIST_NODE_NAME])) {
+            foreach ($content[self::ARG_LIST_NODE_NAME] as $scalar) {
                 $forType = $scalar['@attributes']['for'] ?? null;
                 $argumentList = [];
 
@@ -46,7 +46,7 @@ final class ArgumentListResolver implements CompositeResolverInterface
                 }
             }
 
-            return [self::ARG_LIST_LEAF_NAME => $bindings];
+            return [self::ARG_LIST_NODE_NAME => $bindings];
         }
 
         # otherwise, just an empty array<null>

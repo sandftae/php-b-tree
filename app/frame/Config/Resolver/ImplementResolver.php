@@ -12,14 +12,14 @@ namespace Play\Hard\Frame\Config\Resolver;
 final class ImplementResolver implements CompositeResolverInterface
 {
     /** @const string */
-    public const IMPLEMENTATION_ARG_LEAF_NAME = 'implementation';
+    public const IMPLEMENTATION_ARG_NODE_NAME = 'implementation';
 
     /** @inheritDoc */
     public function resolve(array $content): array
     {
         $bindings = [];
-        if (isset($content[self::IMPLEMENTATION_ARG_LEAF_NAME])) {
-            foreach ($content[self::IMPLEMENTATION_ARG_LEAF_NAME] ?: [] as $instantiation) {
+        if (isset($content[self::IMPLEMENTATION_ARG_NODE_NAME])) {
+            foreach ($content[self::IMPLEMENTATION_ARG_NODE_NAME] ?: [] as $instantiation) {
                 $bindings = array_merge_recursive(
                     $bindings,
                     array_map(
@@ -33,7 +33,7 @@ final class ImplementResolver implements CompositeResolverInterface
                 );
             }
 
-            return [self::IMPLEMENTATION_ARG_LEAF_NAME => reset($bindings)];
+            return [self::IMPLEMENTATION_ARG_NODE_NAME => reset($bindings)];
         }
 
         # otherwise, just an empty array<null>

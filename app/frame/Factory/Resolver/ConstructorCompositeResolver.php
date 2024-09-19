@@ -11,7 +11,7 @@ use Play\Hard\Frame\Factory\DynamicObjectFactoryInterface;
  *
  * @package Play\Hard\Frame\Factory\Resolver
  */
-final class ConstructorCompositeResolver implements ConstructorCompositeResolverInterface
+final readonly class ConstructorCompositeResolver implements ConstructorCompositeResolverInterface
 {
     /** @inheritDoc */
     public function resolve(

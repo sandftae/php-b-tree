@@ -71,6 +71,7 @@
 
     <argumentList for="Play\Hard\Frame\Cli\ConsoleManagerPool">
         <arguments>
+            <argument name="defaultCapacity" xsi:type="scalar">3</argument>
             <argument name="usageMessage" xsi:type="scalar">usage:%s%s%s -t %s a mandatory argument indicates the type of the CLI Command Processor it needs to run ["btree" is currently only available] %s %s%s -c %s an optional argument to define the capacity of the node. THE CAPACITY MUST BE >= 3 [default capacity will be used otherwise: 3]%s %s%s -s %s an optional argument to embed int set, e.g. -s "1,2,3,4" [if not specified AND no file specified [-f], the default range will be used -100 to 100]%s %s%s -d %s an optional argument when used of which the B-Tree`s node structure will be dump in json format. It will be placed in [media/dump] folder. This folder contains examples as well%s %s%s -g %s an optional argument using which the script will draw the B-Tree structure in the picture. It will be placed in [media/graph] folder. This folder contains examples as well %s %s%s -f %s an optional argument indicates the filename it needs to use to load the number set%s%s%s%s if [-f] not specified AND no set [-s] specified, the default range will be used -100 to 100 %s%s%s%s%s the file should be located under [media/number-set] folder (check example: num_set_exmpl.json)%s%s%sExamples:%s%s%s 1. bin/console -t btree -c 3 -f num_set_exmpl.json -g -d%s%s%s%s this command will start the [btree] processor which will use the [-f] file 'num_set_exmpl.json' to build a b-tree with a capacity [-c] of '3'. %s%s%s It will also create a b-tree dump [-d] in the 'media/dump' folder and a b-tree image [-g] in the 'media/graph' folder %s%s%s%s bin/console -t btree -c 3 -s "1, 2, 3, 6, 9, 4" -g -d%s%s %s%s this command will do exactly the same thing but uses the given set [-s] instead of the file [-f]%s%s</argument>
             <argument name="cliCommands" xsi:type="array">
                 <item name="btree" xsi:type="object">Play\Hard\Code\Btree\Cli\BtreeProcessorInterface</item>
@@ -82,7 +83,6 @@
     <argumentList for="Play\Hard\Code\Btree\Model\Balance\KeyManagerComposite">
         <arguments>
             <argument name="positionManagers" xsi:type="array">
-                <item name="folder" xsi:type="scalar"/>
                 <item name="insert_key_node" xsi:type="object">Play\Hard\Code\Btree\Model\Balance\InsertKeyNode</item>
                 <item name="split_the_node" xsi:type="object">Play\Hard\Code\Btree\Model\Balance\KeySplitsNode</item>
             </argument>

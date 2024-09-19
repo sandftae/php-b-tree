@@ -37,14 +37,7 @@ function iterator_map(callable $function, iterable $iterable, bool $unpack = fal
 }
 
 /**
- * @motivation:
- * Init ArrayIterator on a given array. B-Tree is built using objects. If every node in the B-Tree had an ArrayIterator
- * or any other iterators, the B-Tree would be huge. So it turns out that init any kind of iterator when
- * you REALLY NEED it is much cheaper than init Iterator on methods like getChildNodes or getKeys every time an object
- * is updated or a new one is created. So, this simple method is chosen to use and cover all needs here
- *
- * @see \Play\Hard\Code\Btree\Api\BtreeNodeInterface::getChildNodes
- * @see \Play\Hard\Code\Btree\Api\BtreeNodeInterface::getKeys
+ * Init ArrayIterator on a given array
  *
  * @param array $arrayToIterator
  *

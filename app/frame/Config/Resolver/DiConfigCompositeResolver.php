@@ -9,7 +9,7 @@ namespace Play\Hard\Frame\Config\Resolver;
  *
  * @package Play\Hard\Frame\Config\Resolver
  */
-final class DiConfigCompositeResolver implements CompositeResolverInterface
+final readonly class DiConfigCompositeResolver implements CompositeResolverInterface
 {
     /** @inheritDoc */
     public function resolve(array $content): array

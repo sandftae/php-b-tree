@@ -42,7 +42,7 @@ final class DiConfigProvider implements DiConfigProviderInterface
             self::$diConfiguration = $this->loadConfiguration();
         }
 
-        return self::$diConfiguration[ImplementResolver::IMPLEMENTATION_ARG_LEAF_NAME][$type] ?? null;
+        return self::$diConfiguration[ImplementResolver::IMPLEMENTATION_ARG_NODE_NAME][$type] ?? null;
     }
 
     /** @inheritDoc */
@@ -53,8 +53,8 @@ final class DiConfigProvider implements DiConfigProviderInterface
             self::$diConfiguration = $this->loadConfiguration();
         }
 
-        if(isset(self::$diConfiguration[ArgumentListResolver::ARG_LIST_LEAF_NAME][$className][$parameter])) {
-            $value = self::$diConfiguration[ArgumentListResolver::ARG_LIST_LEAF_NAME][$className][$parameter];
+        if(isset(self::$diConfiguration[ArgumentListResolver::ARG_LIST_NODE_NAME][$className][$parameter])) {
+            $value = self::$diConfiguration[ArgumentListResolver::ARG_LIST_NODE_NAME][$className][$parameter];
         }
 
         return $value;

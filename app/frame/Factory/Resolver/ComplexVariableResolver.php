@@ -12,7 +12,7 @@ use Play\Hard\Frame\Config\Enum\EnumDiArgTypes;
  *
  * @package Play\Hard\Frame\Factory\Resolver
  */
-final class ComplexVariableResolver implements ConstructorCompositeResolverInterface
+final readonly class ComplexVariableResolver implements ConstructorCompositeResolverInterface
 {
     /** @inheritDoc */
     public function resolve(

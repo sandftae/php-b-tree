@@ -20,18 +20,17 @@ final readonly class ConsoleManagerPool implements ConsoleManagerPoolInterface
     /** @const int */
     public const SUCCESS_CODE = 0;
 
-    /** @const int */
-    public const DEFAULT_CAPACITY_ARG = 3;
-
     /**
      * ConsoleManagerPool constructor
      *
      * @param array<ConsoleManagerInterface> $cliCommands
      * @param string $usageMessage
+     * @param string $defaultCapacity
      */
     public function __construct(
         private array  $cliCommands,
-        private string $usageMessage
+        private string $usageMessage,
+        private string $defaultCapacity
     ) {}
 
     /** @inheritDoc */
@@ -64,7 +63,7 @@ final readonly class ConsoleManagerPool implements ConsoleManagerPoolInterface
      */
     private function builtArguments(array $options): ArgumentProviderInterface
     {
-        $defaultCapacity = self::DEFAULT_CAPACITY_ARG;
+        $defaultCapacity = (int) $this->defaultCapacity;
         $numSet = $options['s'] ?? [];
         $dumpRequested = isset($options['d']);
         $graphicRequested = isset($options['g']);

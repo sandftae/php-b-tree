@@ -22,8 +22,7 @@ function find_median(array $array): mixed
 }
 
 /**
- * Returns a string containing the JSON representation of the supplied
- * value. If the parameter is an array or object, it will be serialized recursively.
+ * Returns a string containing the JSON representation of the supplied value
  *
  * @param mixed $value
  * @param int $flags
