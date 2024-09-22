@@ -75,7 +75,7 @@ final readonly class NodeCrawler implements NodeCrawlerInterface
     }
 
     /**
-     * Traverse up to the root node of three to re-assign it back
+     * Traverse up to the root node of the tree to re-assign it back
      *
      * @param BtreeNodeInterface $node
      *
