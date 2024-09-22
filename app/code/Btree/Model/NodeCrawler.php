@@ -29,7 +29,7 @@ final readonly class NodeCrawler implements NodeCrawlerInterface
     /** @inheritDoc */
     public function run(BtreeNodeKeyInterface $keyCandidate, BtreeNodeInterface $rootNode): BtreeNodeInterface
     {
-        return $this->extractRoot($this->walk($rootNode, $keyCandidate));
+        return $this->traverseRoot($this->walk($rootNode, $keyCandidate));
     }
 
     /**
@@ -75,19 +75,19 @@ final readonly class NodeCrawler implements NodeCrawlerInterface
     }
 
     /**
-     * Extract root tree assigned to the node given
+     * Traverse up to the root node of three to re-assign it back
      *
      * @param BtreeNodeInterface $node
      *
      * @return BtreeNodeInterface
      */
-    private function extractRoot(BtreeNodeInterface $node): BtreeNodeInterface
+    private function traverseRoot(BtreeNodeInterface $node): BtreeNodeInterface
     {
         $parentNode = $node->getParentNode();
         if ($parentNode->isRoot()) {
             return $node;
         }
 
-        return $this->extractRoot($parentNode);
+        return $this->traverseRoot($parentNode);
     }
 }
