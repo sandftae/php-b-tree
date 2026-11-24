@@ -161,9 +161,6 @@ Put your own files next to it and pass only the file name.
 Each run with `graph=1` saves a new picture in `<project-dir>/media/graph`.
 The name holds the date and time in UTC, for example `b_tree_graph_2026-11-24-16-33-28.jpeg`.
 
-<details>
-<summary>Examples for capacity 3 to 7</summary>
-
 **Capacity 3**
 ![B-tree with capacity 3](media/graph/examples/capacity_3_btree_graph_example.jpeg)
 
@@ -178,8 +175,6 @@ The name holds the date and time in UTC, for example `b_tree_graph_2026-11-24-16
 
 **Capacity 7**
 ![B-tree with capacity 7](media/graph/examples/capacity_7_btree_graph_example.jpeg)
-
-</details>
 
 ### Dumps
 
