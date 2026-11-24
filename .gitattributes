@@ -1,0 +1,3 @@
+# Keep Unix line endings in every text file, also on Windows.
+# make and bin/console stop working when git turns them into Windows ones.
+* text=auto eol=lf

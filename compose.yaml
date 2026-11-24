@@ -1,0 +1,26 @@
+# PHP B-Tree in Docker: one PHP container with Graphviz and Composer.
+# Use it through the Makefile, run "make help" to see the commands.
+
+name: php-b-tree
+
+services:
+  php:
+    build: docker/php
+    image: php-b-tree
+    # The container writes files as your user. The Makefile passes the ids.
+    user: "${HOST_UID:-1000}:${HOST_GID:-1000}"
+    working_dir: /app
+    environment:
+      # Your user has no home folder inside the container, so composer,
+      # the fonts of Graphviz and bash keep their files in /tmp instead.
+      HOME: /tmp
+    volumes:
+      # The project folder is /app inside the container, so the dumps
+      # and images the container makes appear in media/ on your machine.
+      - .:/app
+    networks:
+      - php-b-tree
+
+networks:
+  php-b-tree:
+    name: php-b-tree

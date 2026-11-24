@@ -32,7 +32,7 @@ final readonly class DataDumper implements DataDumperInterface
     /** @inheritDoc */
     public function dump(BtreeNodeInterface $node): void
     {
-        $fileName = $this->fileName . '_' . date('Y-m-d-H:i:s');
+        $fileName = $this->fileName . '_' . date('Y-m-d-H-i-s');
         $nodesData = array_merge(['maxKeys' => $node->getCapacity(), 'keyType' => 'number'], ['nodeData' => $this->extractNodes($node)]);
 
         $this->fileManager->putContent($this->dirName, $fileName, json_encode($nodesData));

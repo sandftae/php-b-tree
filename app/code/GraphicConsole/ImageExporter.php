@@ -36,7 +36,7 @@ final readonly class ImageExporter implements ImageExporterInterface
     /** @inheritDoc */
     public function export(InstructionInterface $digraph): void
     {
-        $imageName = sprintf('%s_%s', $this->imageName, date('Y-m-d-H:i:s'));
+        $imageName = sprintf('%s_%s', $this->imageName, date('Y-m-d-H-i-s'));
 
         $execResults = $this->deployGraph($digraph);
 

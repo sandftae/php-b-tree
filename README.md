@@ -1,87 +1,193 @@
-# PHP B-Tree [**balanced**]
-A simple and ready-to-use project that can create a balanced `B-Tree` representation (`images and B-Tree Data Structure dump`) from a set of numbers given.
+<p align="center">
+  <img src="docs/images/banner.svg" alt="PHP B-Tree" width="100%">
+</p>
 
-By ``set of numbers`` implies ``unique numbers only``.
+<h1 align="center">PHP B-Tree</h1>
 
-Just a tool to learn B-Tree written in PHP.
+<p align="center">
+  Build a balanced B-tree from your numbers and see it as a picture and a JSON dump.
+</p>
 
+<p align="center">
+  <a href="https://www.php.net/"><img src="https://img.shields.io/badge/PHP-8.3-777BB4?logo=php&logoColor=white" alt="PHP 8.3"></a>
+  <a href="#installation"><img src="https://img.shields.io/badge/Docker-ready-2496ED?logo=docker&logoColor=white" alt="Docker ready"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-3DA639" alt="MIT license"></a>
+  <a href="#installation"><img src="https://img.shields.io/badge/platform-Linux%20%7C%20macOS%20%7C%20Windows-6E7781" alt="Linux, macOS and Windows"></a>
+</p>
 
-### Table of content:
-- [overview](#overview)
-- [installation and dependencies](#installation)
-- [demo: built-in B-Tree visual representation](#built-in-b-tree-visual-representation)
-- [demo: dump the B-Tree and see a visual representation using external sources](#dump-the-b-tree-data-structure-and-see-a-visual-representation-of-it-using-external-sources)
-- [how to use and how to specify your own number set](#how-to-use-how-to-start)
-- [usage console command](#usage-console-command)
-- [PHP version](#php-version)
-- [helpful sources](#helpful-sources)
+<p align="center">
+  <img src="docs/images/tree-capacity.gif" alt="The same numbers built as a B-tree with capacity 3, 4, 5 and 6" width="100%">
+</p>
+
+<p align="center">
+  <sub>The same 18 numbers with capacity 3 to 6. The first picture was built with <code>make btree capacity=3 set="10, 20, 5, 6, 12, 30, 7, 17, 3, 1, 25, 15, 8, 2, 4, 22, 27, 9" graph=1</code></sub>
+</p>
+
+## Table of contents
+
+- [Overview](#overview)
+- [Installation](#installation)
+    - [Linux](#linux)
+    - [macOS](#macos)
+    - [Windows](#windows)
+- [Quick start](#quick-start)
+- [Make commands](#make-commands)
+- [Building a tree](#building-a-tree)
+- [Results](#results)
+    - [Pictures](#pictures)
+    - [Dumps](#dumps)
+- [Working inside the container](#working-inside-the-container)
+- [Troubleshooting](#troubleshooting)
+- [Code map](#code-map)
+- [Helpful sources](#helpful-sources)
+- [License](#license)
 
 ## Overview
-#### The main goals are to create a B-Tree project with is:
-- can build a visual representation of the B-Tree [**means, an image**]
-- can dump B-Tree Data Structure to see the structure with the help of an external source
-- is in OOP-like style
-- is a finished and ready-to-use project, not a lib
 
-#### For whom
-- learners/students
-- anyone interested in this topic
+PHP B-Tree is a small tool for learning how a balanced B-tree works.
+You give it a set of numbers, and it builds a B-tree from them.
+Then it can draw the tree as a picture and save its structure as a JSON dump.
+You can open the dump in an online visualizer and compare the two pictures.
+
+The project is ready to use, not a library.
+The code is written in an object-oriented style, so you can read it step by step.
+It is made for learners, students and PHP developers who want to see a B-tree in PHP.
+
+Everything runs in Docker.
+PHP, Composer and the tool that draws the pictures live inside the container,
+so on your machine you need only **Docker**, **make** and **git**.
 
 ## Installation
+
+You need three things on your machine.
+
+- Docker with Docker Compose v2, that is the `docker compose` command
+- make
+- git, to get the project
+
+Pick your system below. After that, go to [Quick start](#quick-start).
+
+### Linux
+
+1. Install Docker Engine for your distribution with the [official guide](https://docs.docker.com/engine/install/). It
+   installs Docker Compose too. If you use Docker Desktop for Linux instead, read the note about `permission denied`
+   in [Troubleshooting](#troubleshooting).
+2. Let your user run Docker without `sudo` with
+   the [post-installation steps](https://docs.docker.com/engine/install/linux-postinstall/). Keep in mind that the
+   `docker` group gives root-level rights.
+3. Install make and git. On Debian or Ubuntu run `sudo apt update && sudo apt install make git`.
+
+### macOS
+
+1. Install [Docker Desktop for Mac](https://docs.docker.com/desktop/setup/install/mac-install/) and start it. It
+   includes Docker Compose.
+2. Install make and git with the Xcode Command Line Tools. Run `xcode-select --install`.
+
+### Windows
+
+On Windows the project runs through WSL 2, a Linux system inside Windows. Docker Desktop uses WSL 2 too.
+
+1. Install WSL 2 with Ubuntu with the [Microsoft guide](https://learn.microsoft.com/en-us/windows/wsl/install).
+2. Install [Docker Desktop for Windows](https://docs.docker.com/desktop/setup/install/windows-install/) with the WSL 2
+   backend and start it.
+3. In Docker Desktop open **Settings > Resources > WSL Integration** and turn it on for Ubuntu.
+4. Open the Ubuntu terminal and install make and git with `sudo apt update && sudo apt install make git`.
+5. Clone the project inside your Ubuntu home folder, for example `~/projects`, not on the `C:` drive. Docker works with
+   these files much faster.
+
+Run all make commands in the Ubuntu terminal.
+
+## Quick start
+
 ```bash
- clone this repository
-```
-It also requires the **graphviz** which is a tool designed to help create a B-Tree image. It is free to use lib.
+git clone https://github.com/sandftae/php-b-tree.git
 
-Without **graphviz** the following error will occur:
+cd php-b-tree
 
-```shell
-sh: dot: not found
+make btree capacity=4 set="1, 2, 3, 4, 5, 6, 7, 8, 9, 10" graph=1 dump=1
 ```
 
-install the **graphviz** library:
+The first run takes a few minutes, because Docker downloads PHP and builds the image.
+The next runs start in seconds.
 
-for **docker** (run it inside a container or add it to the Dockerfile)
- ```bash
- apk add graphviz
-```
+Then open the newest picture in `<project-dir>/media/graph` and the newest dump in `<project-dir>/media/dump`.
+On Windows you can open the folder from the Ubuntu terminal with `cd <project-dir>/media/graph && explorer.exe .`.
 
-for **linux** and **debian**
- ```bash
-sudo apt install graphviz
-```
-or visit the official [site](https://graphviz.org/download/)
+## Make commands
 
-run **composer** install and dump command
+| Command       | What it does                                                                                                                                                 |
+|---------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `make help`   | Shows the list of commands. Plain `make` does the same.                                                                                                      |
+| `make btree`  | Builds a B-tree. See [Building a tree](#building-a-tree).                                                                                                    |
+| `make shell`  | Opens bash inside the PHP container. See [Working inside the container](#working-inside-the-container).                                                      |
+| `make remove` | Removes the Docker containers, image, network and volumes of the project, and the base images if Docker keeps them as images. Your files and `vendor/` stay. |
+
+## Building a tree
+
+`make btree` takes the values below and builds the B-tree.
+
+| Value            | Flag           | What it means                                                                                            | Default                  |
+|------------------|----------------|----------------------------------------------------------------------------------------------------------|--------------------------|
+| `capacity=5`     | `-c 5`         | The most children a node can have, so a node holds up to capacity minus 1 keys. Values below 3 become 3. | 3                        |
+| `set="1, 2, 3"`  | `-s "1, 2, 3"` | The numbers for the tree, separated by commas and put in quotes. Repeated numbers are used once.         | numbers from -100 to 100 |
+| `file=name.json` | `-f name.json` | A JSON file with numbers from `media/number-sets`. It wins over `set`.                                   | not used                 |
+| `graph=1`        | `-g`           | Draws the tree as a picture in `media/graph`.                                                            | no picture               |
+| `dump=1`         | `-d`           | Saves the tree as JSON in `media/dump`.                                                                  | no dump                  |
+
+> [!NOTE]
+> Without `graph=1` and `dump=1` the tree is still built, but nothing is saved.
+
+Examples.
 
 ```bash
-composer install && composer dump-autoload -o
+# A tree from your numbers, with a picture and a dump
+make btree capacity=5 set="1, 2, 3, 4, 5, 6" graph=1 dump=1
+
+# A tree from a file in media/number-sets, picture only
+make btree file=num_set_exmpl.json graph=1
+
+# A tree from the numbers -100 to 100 with capacity 3, picture only
+make btree graph=1
 ```
 
-## Built-in B-Tree visual representation
-Examples of visual representation of B-trees that are built by the ``php/b-tree`` for various **capacities** given:
+A number set file is a JSON array with one set of numbers.
+See `media/number-sets/num_set_exmpl.json` as an example.
+Put your own files next to it and pass only the file name.
 
-**capacity of 3**
-![alt text](media/graph/examples/capacity_3_btree_graph_example.jpeg)
+## Results
 
-**capacity of 4**
-![alt text](media/graph/examples/capacity_4_btree_graph_example.jpeg)
+### Pictures
 
-**capacity of 5**
-![alt text](media/graph/examples/capacity_5_btree_graph_example.jpeg)
+Each run with `graph=1` saves a new picture in `<project-dir>/media/graph`.
+The name holds the date and time in UTC, for example `b_tree_graph_2026-11-24-16-33-28.jpeg`.
 
-**capacity of 6**
-![alt text](media/graph/examples/capacity_6_btree_graph_example.jpeg)
+<details>
+<summary>Examples for capacity 3 to 7</summary>
 
-**capacity of 7**
-![alt text](media/graph/examples/capacity_7_btree_graph_example.jpeg)
+**Capacity 3**
+![B-tree with capacity 3](media/graph/examples/capacity_3_btree_graph_example.jpeg)
 
-You can see more examples here: ````media/graph/examples````
+**Capacity 4**
+![B-tree with capacity 4](media/graph/examples/capacity_4_btree_graph_example.jpeg)
 
-## Dump the B-Tree Data Structure and see a visual representation of it using external sources
+**Capacity 5**
+![B-tree with capacity 5](media/graph/examples/capacity_5_btree_graph_example.jpeg)
 
-This is an example of a B-Tree dump for a capacity of 5:
-```json lines
+**Capacity 6**
+![B-tree with capacity 6](media/graph/examples/capacity_6_btree_graph_example.jpeg)
+
+**Capacity 7**
+![B-tree with capacity 7](media/graph/examples/capacity_7_btree_graph_example.jpeg)
+
+</details>
+
+### Dumps
+
+Each run with `dump=1` saves a new JSON dump in `<project-dir>/media/dump`, named the same way, for example
+`tree_dump_2026-11-24-16-33-28.json`.
+This is a dump of a tree with capacity 5.
+
+```json
 {
   "maxKeys": 5,
   "keyType": "number",
@@ -136,132 +242,88 @@ This is an example of a B-Tree dump for a capacity of 5:
   }
 }
 ```
-#### Visual representation using external sources
 
-To see what a B-Tree dump looks like, **import** the dump here: [CLICK ME](https://tree-visualizer-tvhn.onrender.com/)
+**To see a dump as a tree**, import it into the [Tree Visualizer](https://tree-visualizer-tvhn.onrender.com/).
+
 > [!IMPORTANT]
-> to build a visual representation of the B-Tree, you need to adjust the **tree-order(p)** which is the **capacity**, actually.
-> The **tree-order(p)** **should be the same** as the **capacity**  for the **dump**, and you can set it up by click on **Modify** tab
-> on the site mentioned above
+> Set **tree-order (p)** to the same value as the capacity of the dump.
+> You find it on the **Modify** tab of the visualizer.
 
-*Visual representation of the dump above with capacity of 5 **(tree-order(p))***
-![alt text](media/graph/examples/capacity_5_dump_image_representation_big_num_set_example.png)
+This is the visualizer picture of a dump with capacity 5.
 
-You can see more test dumps here: ````media/dump/examples```` folder.
+![A dump with capacity 5 in the Tree Visualizer](media/graph/examples/capacity_5_dump_image_representation_big_num_set_example.png)
 
-## How to use? How to start?
+More sample dumps are in `media/dump/examples`.
 
-> [!NOTE]
-> you need to run CLI command from the root folder for ``bin`` one
- 
-The project itself does not have an interface/frontend yet, and to get a B-Tree dump or a B-Tree image you need to run 
-B-Tree Builder with the following CLI command:
+## Working inside the container
 
-```console
-supa_mega@user:$ bin/console -t btree -c 3 -s "1, 2, 3, 4, 5, 6" -g -d
+`make btree` covers the usual cases.
+If you want to type the commands yourself, open a shell in the container with `make shell`.
+Inside it you have PHP, Composer and `bin/console` with all its flags.
+
+The full guide is in [docs/console.md](docs/console.md).
+
+## Troubleshooting
+
+**`make: command not found`**
+Install make. On Debian or Ubuntu run `sudo apt update && sudo apt install make`. On macOS run `xcode-select --install`.
+On Windows run the commands in the Ubuntu terminal of WSL 2 and install make there.
+
+**`permission denied while trying to connect to the Docker daemon socket` on Linux**
+Your user is not in the `docker` group yet.
+Follow the [post-installation steps](https://docs.docker.com/engine/install/linux-postinstall/), then log out and log in
+again.
+
+**`permission denied` when composer installs packages or a picture is saved**
+This happens with rootless Docker and with Docker Desktop for Linux.
+There your own user is root inside the container, so the container must run as root to write your files.
+Add `HOST_UID=0 HOST_GID=0` to the command, for example `make btree HOST_UID=0 HOST_GID=0 graph=1`.
+To keep it for all commands, run `export HOST_UID=0 HOST_GID=0` in your terminal first.
+
+**`Cannot connect to the Docker daemon` or `docker: command not found` on macOS or Windows**
+Start Docker Desktop and wait until it is running.
+On Windows also check that **Settings > Resources > WSL Integration** is on for Ubuntu.
+
+**No picture or dump after `make btree`**
+Add `graph=1` for a picture and `dump=1` for a dump.
+Without them the tree is built, but nothing is saved.
+
+**The prompt in `make shell` says `I have no name!`**
+This is fine. The container runs as your user, so the files it makes belong to you.
+Your user id simply has no name inside the container.
+
+## Code map
+
+Start reading from `app/code/Btree/Cli/BtreeProcessor.php`.
+One short method there shows the whole path from the numbers to a balanced tree.
+
+```text
+bin/console                      the command that make btree runs in the container
+app/container/di.xml             which class does what, folder names, default capacity
+app/frame/                       a small framework that reads di.xml, creates objects and reads the flags
+app/code/Btree/
+  Cli/BtreeProcessor.php         builds the tree from the numbers, then saves the picture and the dump
+  Model/TreeElement/             the tree, its nodes and its keys
+  Model/NodeCrawler.php          walks down from the root to the node where a new key goes
+  Model/Balance/                 puts a key into a node and splits a node that is full
+  Model/KeyNodeLinker.php        links child nodes to the keys of their parent
+  Model/SiblingPoint/            finds the key a child node belongs to
+app/code/GraphicConsole/         draws the tree as a picture
+app/code/Dump/                   saves the tree as a JSON dump
+media/number-sets/               files with numbers for file=
+media/graph/                     pictures, examples/ holds the samples from this page
+media/dump/                      dumps, examples/ holds sample dumps
+docker/php/                      the Dockerfile and php.ini of the PHP container
 ```
-#### where:
-- ``-t`` type of structure. This one is required. Currently only ``btree`` is available
-- ``-c`` is ``capacity``. Optional one. The default ``capacity`` is 3. You can specify any value of the capacity. The capacity ``always`` must be equal or greater than 3 [capacity >= 3]
-- ``-s`` is ``number set`` to use to build a tree. Optional one. ``"1, 2, 3, 4, 5, 6"`` these are the numbers that need to be used, and they should always be comma-separated and quoted
-- ``-g`` is a flag to create an image of the B-Tree for the set of numbers provided by ``-s`` or by ``-f`` (see below) flags. If ``-g`` is not provided, the image will not be created
-- ``-d`` is a flag to create a dump. If ``-d`` is not provided, the dump will not be created.
-
-> [!NOTE]
-> If ``-s`` and ``-f`` (see below) flags are not provided, then just a range of numbers from -100 to 100 will be used
- 
-The dump [``-d``] will be located here: ``media/dump`` folder.
-
-The image [``-g``] will be located here: ``media/graph`` folder.
-
-> [!NOTE]
-> Any combination of flags you specify in the CLI will not create an image or dump without these ``-g`` and ``-d`` flags.
-> The B-Tree structure itself will be built and the CLI will finish successfully, but there will be no visual representation or dumps created.
-> So, just specify the flag if you need a visual representation or a dump
-
-How to use dump has been described [here](#dump-the-b-tree-data-structure-and-see-a-visual-representation-of-it-using-external-sources)
-
-
-### Use a file containing a set of numbers instead of passing a set of numbers through the CLI command
-
-```console
-supa_mega@user:$ bin/console -t btree -c 3 -f num_set_exmpl.json -g -d
-```
-#### where:
-- ``-f`` is a file name flag and ``num_set_exmpl.json`` is a file to use which
-
-The ``num_set_exmpl.json`` is an example. You can create and name it as you want.
-
-> [!NOTE]
-> the file must be located under ``media/number-sets`` folder
-
-Check the existing one as an example: ``media/number-sets/num_set_exmpl.json``
-
-> [!CAUTION]
-> the number set file should always be a ``JSON`` file containing ``only one`` set. 
-> Check the example mentioned above
-
-
-## Usage console command
-
-To see more details just run the following CLI command:
-
-```console
-supa_mega@user:$ bin/console
-usage:
-                 -t      a mandatory argument indicates the type of the CLI Command Processor it needs to run ["btree" is currently only available] 
-                 -c      an optional argument to define the capacity of the node. THE CAPACITY MUST BE >= 3 [default capacity will be used otherwise: 3]
-                 -s      an optional argument to embed int set, e.g. -s "1,2,3,4" [if not specified AND no file specified [-f], the default range will be used -100 to 100]
-                 -d      an optional argument when used of which the B-Tree`s node structure will be dumped in JSON format. It will be placed in [media/dump] folder. This folder contains examples as well
-                 -g      an optional argument using which the script will draw the B-Tree structure in the picture. It will be placed in [media/graph] folder. This folder contains examples as well 
-                 -f      an optional argument indicates the filename it needs to use to load the number set
-                         if [-f] is not specified AND no set [-s] specified, the default range will be used -100 to 100    
-                         the file should be located under [media/number-set] folder (check example: num_set_exmpl.json)         
-Examples:
-                 1. bin/console -t btree -c 3 -f num_set_exmpl.json -g -d
-
-                 this command will start the [btree] processor which will use the [-f] file 'num_set_exmpl.json' to build a b-tree with a capacity [-c] of '3'. 
-                 It will also create a b-tree dump [-d] in the 'media/dump' folder and a b-tree image [-g] in the 'media/graph' folder 
-
-                 bin/console -t btree -c 3 -s "1, 2, 3, 6, 9, 4" -g -d
-
-                 this command will do the same thing but uses the given set [-s] instead of the file [-f]
-```
-
-## PHP version
-
-Requires PHP 8.3 or higher
 
 ## Helpful sources
-A site that will help you build your B-Tree: [CLICK ME](https://www.cs.usfca.edu/~galles/visualization/BTree.html)
 
-An [article](https://blog.jcole.us/2013/01/10/btree-index-structures-in-innodb/) explaining technical moments of the *B+Tree*
+- [B-tree visualization at USFCA](https://www.cs.usfca.edu/~galles/visualization/BTree.html) lets you build a B-tree
+  step by step.
+- [B+Tree index structures in InnoDB](https://blog.jcole.us/2013/01/10/btree-index-structures-in-innodb/) explains how
+  MySQL keeps its indexes in a B+tree.
+- [Graphviz Online](https://dreampuf.github.io/GraphvizOnline/) is an online editor for DOT graphs.
 
-An [online DOT editor](https://dreampuf.github.io/GraphvizOnline/#digraph%20G%20%7B%0A%0A%20%20subgraph%20cluster_0%20%7B%0A%20%20%20%20style%3Dfilled%3B%0A%20%20%20%20color%3Dlightgrey%3B%0A%20%20%20%20node%20%5Bstyle%3Dfilled%2Ccolor%3Dwhite%5D%3B%0A%20%20%20%20a0%20-%3E%20a1%20-%3E%20a2%20-%3E%20a3%3B%0A%20%20%20%20label%20%3D%20%22process%20%231%22%3B%0A%20%20%7D%0A%0A%20%20subgraph%20cluster_1%20%7B%0A%20%20%20%20node%20%5Bstyle%3Dfilled%5D%3B%0A%20%20%20%20b0%20-%3E%20b1%20-%3E%20b2%20-%3E%20b3%3B%0A%20%20%20%20label%20%3D%20%22process%20%232%22%3B%0A%20%20%20%20color%3Dblue%0A%20%20%7D%0A%20%20start%20-%3E%20a0%3B%0A%20%20start%20-%3E%20b0%3B%0A%20%20a1%20-%3E%20b3%3B%0A%20%20b2%20-%3E%20a3%3B%0A%20%20a3%20-%3E%20a0%3B%0A%20%20a3%20-%3E%20end%3B%0A%20%20b3%20-%3E%20end%3B%0A%0A%20%20start%20%5Bshape%3DMdiamond%5D%3B%0A%20%20end%20%5Bshape%3DMsquare%5D%3B%0A%7D) to help to build any graphs
+## License
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+PHP B-Tree is released under the MIT License. See [LICENSE](LICENSE).
